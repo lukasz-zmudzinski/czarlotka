@@ -1,0 +1,6 @@
+<module rename-to="messages">
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name='com.google.gwt.rpc.RPC'/>
+    <entry-point class='net.kindleit.gae.example.client.IndexPage'/>
+    <servlet path='/messages/messages' class='net.kindleit.gae.example.web.MessagesServiceImpl'/>
+</module>
