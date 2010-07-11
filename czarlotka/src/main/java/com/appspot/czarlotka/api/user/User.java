@@ -1,11 +1,13 @@
 package com.appspot.czarlotka.api.user;
 
+import java.io.Serializable;
+
 /**
  * User: lukasz.zmudzinski
  * Date: 2010-07-01
  * Time: 23:08:26
  */
-public class User {
+public class User implements Serializable {
 
     private String login;
     private String email;

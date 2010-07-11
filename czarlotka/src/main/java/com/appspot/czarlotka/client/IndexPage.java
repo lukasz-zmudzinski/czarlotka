@@ -18,7 +18,7 @@ public class IndexPage implements EntryPoint {
                 DOM.getElementById("Loading-Message"));
 
         Shoutbox shoutbox = new Shoutbox();
-        shoutbox.setHeader("Welcome to Google App Engine for Java!");
+        shoutbox.setHeader("What is the sense of your existence?!");
 
         // create greetings message
         RootPanel.get().add(shoutbox);

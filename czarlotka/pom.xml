@@ -8,7 +8,6 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-
     <name>Czarlotka</name>
     <description>Serwis Czarlotka</description>
 
@@ -21,6 +20,11 @@
         <repository>
             <id>gwt-maven</id>
             <url>http://gwt-maven.googlecode.com/svn/trunk/mavenrepo/</url>
+        </repository>
+        <repository>
+            <id>guice-maven</id>
+            <name>guice maven</name>
+            <url>http://guice-maven.googlecode.com/svn/trunk</url>
         </repository>
     </repositories>
 
@@ -42,10 +46,21 @@
 
     <dependencies>
         <dependency>
+            <groupId>pl.zmudzinski.lukasz</groupId>
+            <artifactId>orm-commons</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
             <version>2.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.code.guice</groupId>
+            <artifactId>guice-servlet</artifactId>
+            <version>2.0</version>
+        </dependency>
+
         <!-- jars from GAE's "lib/user" must be added as compile-time dependencies, as described
   here in "Copying JARs" section: http://code.google.com/appengine/docs/java/tools/ant.html -->
         <dependency>

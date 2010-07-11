@@ -1,6 +1,6 @@
 package com.appspot.czarlotka.server.lotto;
 
-import com.appspot.czarlotka.server.bets.BetRepository;
+import com.appspot.czarlotka.server.bets.biglotto.BigLottoBetRepository;
 import com.google.inject.Inject;
 
 /**
@@ -11,11 +11,11 @@ import com.google.inject.Inject;
 public class LottoMessageProcessor {
 
     @Inject
-    private BetRepository betRepository;
+    private BigLottoBetRepository bigLottoBetRepository;
 
     public void process(LottoMessage message) {
         if (message.isFromLotto() && message.containsLotteryResultsAnnouncement()) {
-            betRepository.getActiveBets(message.getLotteryDate());
+            bigLottoBetRepository.getActiveBets(message.getLotteryDate());
 
         }
     }

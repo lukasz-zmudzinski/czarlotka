@@ -1,0 +1,7 @@
+<module rename-to="messages">
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name='com.google.gwt.rpc.RPC'/>
+    <inherits name='com.appspot.czarlotka.CzarlotkaModel'/>
+    <entry-point class='com.appspot.czarlotka.client.IndexPage'/>
+    <servlet path='/messages/messages' class='com.appspot.czarlotka.web.MessagesServiceImpl'/>
+</module>
