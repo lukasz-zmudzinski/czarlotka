@@ -5,7 +5,7 @@
 
     <groupId>com.appspot.czarlotka</groupId>
     <artifactId>czarlotka</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>Czarlotka</name>
@@ -48,6 +48,11 @@
         <dependency>
             <groupId>pl.zmudzinski.lukasz</groupId>
             <artifactId>orm-commons</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+           <dependency>
+            <groupId>pl.zmudzinski.lukasz</groupId>
+            <artifactId>guice-commons</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -419,7 +424,7 @@ by ${appspot.home} property (Typically, one used by your Eclipse plug-in) -->
         <gae.version>1.3.5</gae.version>
 
         <!-- GWT version -->
-        <gwt.version>2.0.3</gwt.version>
+        <gwt.version>2.0.4</gwt.version>
 
         <!-- Upload to http://test.latest.<applicationName>.appspot.com by default -->
         <gae.application.version>test</gae.application.version>

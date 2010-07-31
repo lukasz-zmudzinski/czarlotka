@@ -4,4 +4,5 @@
     <inherits name='com.appspot.czarlotka.CzarlotkaModel'/>
     <entry-point class='com.appspot.czarlotka.client.IndexPage'/>
     <servlet path='/messages/messages' class='com.appspot.czarlotka.web.MessagesServiceImpl'/>
+    <set-property name="user.agent" value="gecko" />
 </module>

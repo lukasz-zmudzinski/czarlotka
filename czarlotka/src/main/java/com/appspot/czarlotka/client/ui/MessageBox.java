@@ -8,6 +8,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.*;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -23,7 +24,7 @@ public class MessageBox extends VerticalPanel {
     }
 
     public void update() {
-        AsyncCallback<List<Message>> callback = new AsyncCallback<List<Message>>() {
+        AsyncCallback<Collection<Message>> callback = new AsyncCallback<Collection<Message>>() {
 
             @Override
             public void onFailure(Throwable caught) {
@@ -31,7 +32,7 @@ public class MessageBox extends VerticalPanel {
             }
 
             @Override
-            public void onSuccess(List<Message> result) {
+            public void onSuccess(Collection<Message> result) {
                 update(result);
             }
         };
@@ -39,7 +40,7 @@ public class MessageBox extends VerticalPanel {
         messagesServiceAsync.getAll(callback);
     }
 
-    protected void update(List<Message> messages) {
+    protected void update(Collection<Message> messages) {
         clear();
 
         for (Message message : messages) {

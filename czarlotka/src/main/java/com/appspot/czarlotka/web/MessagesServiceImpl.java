@@ -3,11 +3,9 @@ package com.appspot.czarlotka.web;
 import com.appspot.czarlotka.api.Message;
 import com.appspot.czarlotka.api.Messages;
 import com.appspot.czarlotka.client.MessagesService;
-import com.appspot.czarlotka.server.MessageRepository;
 import com.appspot.czarlotka.server.notification.email.Email;
 import com.appspot.czarlotka.server.notification.email.EmailSender;
-import com.appspot.czarlotka.server.notification.email.EmailSenderImpl;
-import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+import com.google.inject.Inject;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -17,13 +15,17 @@ import java.util.Collection;
  * The server side implementation of the RPC service.
  */
 @SuppressWarnings("serial")
-public class MessagesServiceImpl extends RemoteServiceServlet implements
-        MessagesService {
+public class MessagesServiceImpl implements MessagesService {
 
-    private Messages messageRepository = new MessageRepository();
+    private Messages messageRepository /*= new MessageRepository()*/;
 
+    private EmailSender emailSender /*= new EmailSenderImpl()*/;
 
-    private EmailSender emailSender = new EmailSenderImpl();
+    @Inject
+    public MessagesServiceImpl(Messages messageRepository, EmailSender emailSender) {
+        this.messageRepository = messageRepository;
+        this.emailSender = emailSender;
+    }
 
     @Override
     public void create(Message message) {

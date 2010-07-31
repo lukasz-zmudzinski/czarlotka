@@ -8,7 +8,7 @@ import java.util.logging.*;
  * Time: 15:20:55
  */
 public class GuiceDebug {
-    private static final Handler HANDLER = new ConsoleHandler() {{
+    /*private static final Handler HANDLER = new ConsoleHandler() {{
         setLevel(Level.ALL);
         setFormatter(new Formatter() {
             @Override
@@ -16,14 +16,15 @@ public class GuiceDebug {
                 return String.format("[Debug Guice] %s%n" + logRecord.getMessage());
             }
         });
-    }};
+    }};*/
 
     private GuiceDebug() {
     }
 
     public static void enable() {
         Logger guiceLogger = Logger.getLogger("com.google.inject");
-        guiceLogger.addHandler(HANDLER);
         guiceLogger.setLevel(Level.ALL);
+//        guiceLogger.addHandler(HANDLER);
+//        guiceLogger.setLevel(Level.ALL);
     }
 }
